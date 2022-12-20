@@ -24,7 +24,7 @@ submit.addEventListener("click",
             alert('Inserisci il tuo nome e cognome');
             location.reload();
         }
-        else if  (!isNaN(name_passenger)) {
+        else if (!isNaN(name_passenger)) {
             alert('Inserisci il tuo nome senza simboli o numeri');
             location.reload();
         }
