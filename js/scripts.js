@@ -5,11 +5,6 @@ submit.addEventListener('click',
     function() {
         document.getElementById('generate').innerHTML = "Rigenera";
 
-        if(isNaN(submit)) {
-            alert('ERRORE! Si prega di inserire i dati per generare il suo biglietto');
-            location.reload();
-        }
-
         // Dati passeggero
         let name_passenger = document.getElementById('name').value;
         console.log(`L'utente si chiama ${name_passenger}`);
@@ -23,7 +18,18 @@ submit.addEventListener('click',
         console.log(`L'utente rientra nella categoria sconto ${age}`);
 
         // In caso di errore
-        if(isNaN(distance)) {
+        if(!name_passenger && !distance) {
+            alert('ERRORE! Si prega di inserire i dati per generare il suo biglietto');
+            location.reload();
+        } 
+        else if(!distance) {
+            alert('Per favore, inserire la distanza');
+            location.reload();
+        }
+        else if(!name_passenger) {
+            alert('Per favore, inserire nome e cognome del passeggero');
+        }
+        else if(isNaN(distance)) {
             alert("Il valore inserito non è un numero! Per favore, inserire correttamente i valori richiesti");
             location.reload();
         }
