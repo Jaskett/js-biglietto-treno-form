@@ -1,83 +1,107 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form Biglietto treno</title>
+<html lang="it">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Form Biglietto treno</title>
+        <link rel="stylesheet" href="css/style.css">
 
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <main>
-        <h1 class="t_al-c t_up">Calcola il prezzo del tuo biglietto</h1>
-        <div id="calc_ticket">
-            <div class="d-flex justify_around" id="user_form">
-                <span>
-                    <label for="dati passeggero">Nome e Cognome</label>
-                    <input type="text" name="dati passeggero" id="name" placeholder="Inserisci nome e cognome">
-                </span>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
 
-                <span>
-                    <label for="distanza">Km da Percorrere</label>
-                    <input type="text" name="distanza da percorrere" id="distance" placeholder="Distanza da percorrere in Km">
-                </span>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    </head>
+    <body>
+        <main>
+            <section>
+                <h1 class="t_al-c t_up">calcola il prezzo del tuo biglietto</h1>
+                <div id="calc_ticket">
+                    <div class="d-flex justify_around" id="user_form">
+                        
+                        <!-- Nome Utente -->
+                        <span>
+                            <label for="nome" class="fs-18 t_al-c show">Nome e Cognome</label>
+                            <input type="text" id="nome" name="nome e cognome passeggero" placeholder="Inserisci il tuo nome e cognome">
+                        </span>
 
-                <span>
-                    <label for="eta passeggero">Fascia d'età</label>
-                    <select name="eta passeggero" id="age">
-                        <option value="Under">Under 18</option>
-                        <option value="Maggiorenne">Maggiorenne</option>
-                        <option value="Over">Over 65</option>
-                    </select>
-                </span>
-            </div>
+                        <!-- Distanza da percorrere -->
+                        <span>
+                            <label for="distanza" class="fs-18 t_al-c show">KM da Percorrere</label>
+                            <input type="text" id="distanza" name="distanza da percorrere" placeholder="Distanza da percorrere in Km">
+                        </span>
 
-            <div class="buttons">
-                <button class="btn" type="submit" id="generate">Genera</button>
+                        <!-- Selettore età -->
+                        <span>
+                            <label for="eta" class="fs-18 t_al-c show">Fascia d'età</label>
 
-                <button class="btn" type="submit" id="refresh">Annulla</button>
-            </div>
-        </div>
+                            <select id="eta" name="eta-passeggero" class="cur">
+                                <option value="-">-</option>
+                                <option value="Under">Under 18</option>
+                                <option value="Maggiorenne">Maggiorenne</option>
+                                <option value="Over">Over 65</option>
+                            </select>
+                        </span>
+                    </div>
 
-        <section id="ticket_generator">
-            <h1 class="t_al-c t_up">Il tuo biglietto</h1>
-            <div id="ticket_display">
-                <div id="container_ticket">
-                    <h2 class="t_up t_al-l">Dettaglio Passeggeri</h2>
-                    <div class="d-flex h-100">
-                        <div id="passenger_name-data">
-                            <h3 class="t_up">Dati Passeggero</h3>
-                            <div id="nameP" class="t_up"></div>
-                        </div>
+                    <!-- Bottoni -->
+                    <div>
+                        <button class="btn cur" type="submit" id="generate_ticket">Genera</button>
 
-                        <ul class="d-flex justify_around">
-                            <li>
-                                <h4>Offerta</h4>
-                                <p id="offType"></p>
-                            </li>
+                        <button class="btn cur" id="refresh_page">Annulla</button>
+                    </div>
 
-                            <li>
-                                <h4>Carrozza</h4>
-                                <p id="ride"></p>
-                            </li>
+                    <!-- Avviso Caricamento -->
+                    <div id="loading-message" class="t_al-c d-none">
+                        <i class="fa-solid fa-spinner  fa-2x d-in-block"></i>
 
-                            <li>
-                                <h4>Codice CP</h4>
-                                <p id="codeCp"></p>
-                            </li>
-    
-                            <li>
-                                <h4>Costo Biglietto</h4>
-                                <p id="price-ticket"></p>
-                            </li>
-                        </ul>
+                        <h2 class="d-in-block">Caricamento in corso</h2>
                     </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
+            <!-- Contenitore biglietto -->
+            <section id="ticket_generator" class="d-none">
+                <h1 class="t_al-c t_up">Il tuo biglietto</h1>
 
-    <script type="text/javascript" src="js/scripts.js"></script>
-</body>
+                <div id="ticket_display" class="d-flex">
+                    <div id="container_ticket" class="t_al-l">
+                        <h2 class="t_up t_al-l d-in-block">Dettaglio Passeggeri</h2>
+
+                        <h3 id="ticketN" class="d-in-block"></h3>
+
+                        <div class="d-flex h-100 t_al-c">
+                            <div id="passenger_name-data">
+                                <h3 class="t_up">Nome Passeggero</h3>
+                                <div id="nameP" class="t_up"></div>
+                            </div>
+
+                            <ul class="d-flex justify_around">
+                                <li class="t_al-l">
+                                    <h4 class="fs-18">Offerta</h4>
+                                    <p id="offType"></p>
+                                </li>
+
+                                <li class="t_al-l">
+                                    <h4 class="fs-18">Carrozza</h4>
+                                    <p id="ride"></p>
+                                </li>
+
+                                <li class="t_al-l">
+                                    <h4 class="fs-18">Codice CP</h4>
+                                    <p id="codeCP"></p>
+                                </li>
+
+                                <li class="t_al-l">
+                                    <h4 class="fs-18">Costo Biglietto</h4>
+                                    <p id="price-ticket"></p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+        <script type="text/javascript" src="js/scripts.js"></script>
+    </body>
 </html>
