@@ -4,3 +4,61 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+/* Regole generali */
+.t_up {
+    text-transform: uppercase;
+}
+
+.t_al-c {
+    text-align: center;
+}
+
+.d-flex {
+    display: flex;
+}
+
+.justify_between {
+    justify-content: space-between;
+}
+
+body {
+    background-color: rgb(128, 0, 0);
+}
+
+main {
+    width: 80%;
+    margin: auto;
+}
+
+main h1 {
+    padding-top: 30px;
+}
+
+h1 {
+    color: white;
+}
+
+#ticket_display, #calc_ticket {
+    border: 2px solid black;
+    background-color: gray;
+    padding: 30px 70px;
+    margin-top: 30px;
+    text-align: center;
+    border-radius: 15px;
+}
+
+label[for="dati passeggero"], label[for="eta passeggero"], label[for="distanza"] {
+    display: block;
+    text-align: center;
+    font-weight: bold;
+    padding-bottom: 15px;
+    font-size: 18px;
+}
+
+.btn {
+    margin: 70px 10px 50px;
+    padding: 5px 10px;
+    border-radius: 10px;
+    font-size: 18px;
+}

@@ -10,9 +10,9 @@
 </head>
 <body>
     <main>
-        <h1>Calcola il prezzo del tuo biglietto</h1>
-        <div>
-            <div>
+        <h1 class="t_al-c t_up">Calcola il prezzo del tuo biglietto</h1>
+        <div id="calc_ticket">
+            <div class="d-flex justify_between" id="user_form">
                 <span>
                     <label for="dati passeggero">Nome e Cognome</label>
                     <input type="text" name="dati passeggero" id="name" placeholder="Inserisci nome e cognome">
@@ -24,7 +24,7 @@
                 </span>
 
                 <span>
-                    <label for="eta passegger">Fascia d'età</label>
+                    <label for="eta passeggero">Fascia d'età</label>
                     <select name="eta passeggero" id="age">
                         <option value="Under">Under 18</option>
                         <option value="Maggiorenne">Maggiorenne</option>
@@ -33,24 +33,24 @@
                 </span>
             </div>
 
-            <div>
-                <button type="submit" id="generate">Genera</button>
+            <div class="buttons">
+                <button class="btn" type="submit" id="generate">Genera</button>
 
-                <button type="submit" id="refresh">Annulla</button>
+                <button class="btn" type="submit" id="refresh">Annulla</button>
             </div>
         </div>
 
-        <h1>Il tuo biglietto</h1>
-        <div>
-            <div>
-                <h2>Dettaglio Passeggeri</h2>
-                <div>
+        <h1 class="t_al-c t_up">Il tuo biglietto</h1>
+        <div id="ticket_display">
+            <div id="container_ticket">
+                <h2 class="t_up">Dettaglio Passeggeri</h2>
+                <div class="d-flex justify_between">
                     <div>
-                        <h3>Nome Passeggero</h3>
-                        <div></div>
+                        <h3 class="t_up">Nome Passeggero</h3>
+                        <div class="nameP"></div>
                     </div>
                     <div>
-                        <ul>
+                        <ul class="d-flex">
                             <li>
                                 <p>Offerta</p>
                                 <p></p>
