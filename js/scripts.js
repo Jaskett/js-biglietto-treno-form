@@ -5,6 +5,11 @@ submit.addEventListener('click',
     function() {
         document.getElementById('generate').innerHTML = "Rigenera";
 
+        if(isNaN(submit)) {
+            alert('ERRORE! Si prega di inserire i dati per generare il suo biglietto');
+            location.reload();
+        }
+
         // Dati passeggero
         let name_passenger = document.getElementById('name').value;
         console.log(`L'utente si chiama ${name_passenger}`);
