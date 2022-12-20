@@ -12,7 +12,7 @@
     <main>
         <h1 class="t_al-c t_up">Calcola il prezzo del tuo biglietto</h1>
         <div id="calc_ticket">
-            <div class="d-flex justify_between" id="user_form">
+            <div class="d-flex justify_around" id="user_form">
                 <span>
                     <label for="dati passeggero">Nome e Cognome</label>
                     <input type="text" name="dati passeggero" id="name" placeholder="Inserisci nome e cognome">
@@ -40,41 +40,42 @@
             </div>
         </div>
 
-        <h1 class="t_al-c t_up">Il tuo biglietto</h1>
-        <div id="ticket_display">
-            <div id="container_ticket">
-                <h2 class="t_up">Dettaglio Passeggeri</h2>
-                <div class="d-flex justify_between">
-                    <div>
-                        <h3 class="t_up">Nome Passeggero</h3>
-                        <div class="nameP"></div>
-                    </div>
-                    <div>
-                        <ul class="d-flex">
+        <section id="ticket_generator">
+            <h1 class="t_al-c t_up">Il tuo biglietto</h1>
+            <div id="ticket_display">
+                <div id="container_ticket">
+                    <h2 class="t_up t_al-l">Dettaglio Passeggeri</h2>
+                    <div class="d-flex h-100">
+                        <div id="passenger_name-data">
+                            <h3 class="t_up">Dati Passeggero</h3>
+                            <div id="nameP" class="t_up"></div>
+                        </div>
+
+                        <ul class="d-flex justify_around">
                             <li>
-                                <p>Offerta</p>
-                                <p></p>
+                                <h4>Offerta</h4>
+                                <p id="offType"></p>
                             </li>
 
                             <li>
-                                <p>Carrozza</p>
-                                <p></p>
+                                <h4>Carrozza</h4>
+                                <p id="ride"></p>
                             </li>
 
                             <li>
-                                <p>Codice CP</p>
-                                <p></p>
+                                <h4>Codice CP</h4>
+                                <p id="codeCp"></p>
                             </li>
-
+    
                             <li>
-                                <p>Costo Biglietto</p>
-                                <p></p>
+                                <h4>Costo Biglietto</h4>
+                                <p id="price-ticket"></p>
                             </li>
                         </ul>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     </main>
 
     <script type="text/javascript" src="js/scripts.js"></script>

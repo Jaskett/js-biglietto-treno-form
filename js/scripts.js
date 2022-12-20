@@ -50,6 +50,26 @@ submit.addEventListener('click',
         let ticket_over = full_price_ticket * 0.60;
         let ticket_d_over = ticket_over.toFixed(2);
         console.log(`Il prezzo del biglietto per Over 65 è: ${ticket_d_over}€`);
+
+        // Aggiunta Informazioni Biglietto
+        document.getElementById('nameP').innerHTML = name_passenger;
+        document.getElementById('ride').innerHTML = Math.ceil(Math.random() * 19 + 1);
+        document.getElementById('codeCP').innerHTML = Math.ceil(Math.random() * 10000 + 90000);
+
+        // Output prezzo biglietto del treno con sconti
+        if(age.value == 'Under') {
+            document.getElementById('price-ticket').innerHTML = ticket_d_under + '€';
+            document.getElementById('offType').innerHTML = 'Biglietto Under 18';
+        }
+        else if(age.value == 'Over') {
+            document.getElementById('price-ticket').innerHTML = ticket_d_over + '€';
+            document.getElementById('offType').innerHTML = 'Biglietto Over 65';
+        }
+        else {
+            document.getElementById('price-ticket').innerHTML = ticket + '€';
+            document.getElementById('offType').innerHTML = 'Biglietto Standard';
+        }
+        document.getElementById('ticket_generator').className = "show";
     }    
 );
 
@@ -58,15 +78,4 @@ refresh.addEventListener('click',
         console.log('Aggiorno la pagina');
         location.reload();
     }
-)
-
-// // Output prezzo biglietto del treno con sconti
-// if(age < 18) {
-//     alert(`Complimenti! Hai diritto allo sconto per Under 18. Il prezzo del biglietto è di ${ticket_d_under}€`);
-// }
-// else if(age > 65) {
-//     alert(`Complimenti! Hai diritto allo sconto per Over 65. Il prezzo del biglietto è di ${ticket_d_over}€`);
-// }
-// else {
-//     alert(`Il prezzo del biglietto è di ${ticket}€`);
-// }
+);

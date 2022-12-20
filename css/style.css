@@ -14,12 +14,20 @@
     text-align: center;
 }
 
+.t_al-l {
+    text-align: left;
+}
+
 .d-flex {
     display: flex;
 }
 
 .justify_between {
     justify-content: space-between;
+}
+
+.justify_around {
+    justify-content: space-around;
 }
 
 body {
@@ -37,28 +45,85 @@ main h1 {
 
 h1 {
     color: white;
+    text-shadow: 3px 3px 5px #000000;
+    font-size: 28px;
+}
+
+#ticket_display {
+    height: 275px;
+    display: flex;
+    align-items: center;
 }
 
 #ticket_display, #calc_ticket {
     border: 2px solid black;
     background-color: gray;
-    padding: 30px 70px;
+    padding: 30px 0;
     margin-top: 30px;
     text-align: center;
     border-radius: 15px;
+    box-shadow: 4px 5px 8px #363636;
 }
 
 label[for="dati passeggero"], label[for="eta passeggero"], label[for="distanza"] {
     display: block;
     text-align: center;
     font-weight: bold;
-    padding-bottom: 15px;
+    padding-bottom: 30px;
     font-size: 18px;
 }
 
 .btn {
     margin: 70px 10px 50px;
-    padding: 5px 10px;
+    padding: 5px 20px;
     border-radius: 10px;
     font-size: 18px;
+    box-shadow: 4px 3px 8px #24080f;
+}
+
+input, select {
+    width: 220px;
+    padding: 5px 10px;
+    border-radius: 25px;
+    border: 2px solid;
+    box-shadow: 4px 3px 8px #24080f;
+}
+
+label {
+    text-shadow: 1px 2px 2px #585858;
+}
+
+ul {
+    width: 80%;
+    border-top: 1.5px solid #000;
+    border-bottom: 1.5px solid #000;
+}
+
+ul li {
+    list-style-type: none;
+    text-align: left;
+}
+
+#passenger_name-data {
+    padding: 30px 0 0;
+    width: 25%;
+    background-color: rgb(21, 21, 21);
+    color: white;
+}
+
+#container_ticket {
+    padding: 0 30px;
+    width: 100%;
+}
+
+h4 {
+    font-size: 18px;
+}
+
+#ticket_generator {
+    display: none;
+}
+
+.show {
+    display: block!important;
 }
