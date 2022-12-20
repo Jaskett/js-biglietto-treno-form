@@ -9,21 +9,73 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div>
-        <input type="text" name="dati passeggero" id="name" placeholder="Inserisci nome e cognome">
+    <main>
+        <h1>Calcola il prezzo del tuo biglietto</h1>
+        <div>
+            <div>
+                <span>
+                    <label for="dati passeggero">Nome e Cognome</label>
+                    <input type="text" name="dati passeggero" id="name" placeholder="Inserisci nome e cognome">
+                </span>
 
-        <input type="text" name="distanza da percorrere" id="distance" placeholder="Distanza da percorrere in Km">
+                <span>
+                    <label for="distanza">Km da Percorrere</label>
+                    <input type="text" name="distanza da percorrere" id="distance" placeholder="Distanza da percorrere in Km">
+                </span>
 
-        <select name="eta passeggero" id="age">
-            <option value="Under">Under 18</option>
-            <option value="Maggiorenne">Maggiorenne</option>
-            <option value="Over">Over 65</option>
-        </select>
+                <span>
+                    <label for="eta passegger">Fascia d'età</label>
+                    <select name="eta passeggero" id="age">
+                        <option value="Under">Under 18</option>
+                        <option value="Maggiorenne">Maggiorenne</option>
+                        <option value="Over">Over 65</option>
+                    </select>
+                </span>
+            </div>
 
-        <button type="submit" id="generate">Genera</button>
+            <div>
+                <button type="submit" id="generate">Genera</button>
 
-        <button type="submit" id="refresh">Annulla</button>
-    </div>
+                <button type="submit" id="refresh">Annulla</button>
+            </div>
+        </div>
+
+        <h1>Il tuo biglietto</h1>
+        <div>
+            <div>
+                <h2>Dettaglio Passeggeri</h2>
+                <div>
+                    <div>
+                        <h3>Nome Passeggero</h3>
+                        <div></div>
+                    </div>
+                    <div>
+                        <ul>
+                            <li>
+                                <p>Offerta</p>
+                                <p></p>
+                            </li>
+
+                            <li>
+                                <p>Carrozza</p>
+                                <p></p>
+                            </li>
+
+                            <li>
+                                <p>Codice CP</p>
+                                <p></p>
+                            </li>
+
+                            <li>
+                                <p>Costo Biglietto</p>
+                                <p></p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
 
     <script type="text/javascript" src="js/scripts.js"></script>
 </body>
